@@ -11,10 +11,10 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the port the app runs on
-EXPOSE 5900
+EXPOSE 80
 
 COPY myFlaskApp/ .
 
 # Command to run the application
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5900", "app:app"]
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:80", "app:app"]
 
